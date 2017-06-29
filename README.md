@@ -1,0 +1,1 @@
+Create grpc server before add ValidationInterceptor in your channel
