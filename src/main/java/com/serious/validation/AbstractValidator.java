@@ -16,7 +16,7 @@ public abstract class AbstractValidator implements Validator {
         String errInfo = String.format("validate error protoName:%s,fieldName:%s,fieldValue:%s,extensionValue:%s,", protoName, fieldName, fieldValue, extensionValue);
         logger.debug("validate protoName:{},fieldName:{},fieldValue:{},extensionValue:{}", protoName, fieldName, fieldValue, extensionValue);
         if (fieldValue instanceof GeneratedMessageV3) {
-
+            //TODO
         }
         doValidate(fieldValue, extensionValue, errInfo);
     }
