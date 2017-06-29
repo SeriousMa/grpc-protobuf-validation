@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+option java_multiple_files = true;
+
+import "google/protobuf/descriptor.proto";
+
+package validation;
+
+extend google.protobuf.FieldOptions {
+    optional int64 Max = 50001;
+    optional int64 Min = 50002;
+    optional bool Past = 50003;
+    optional bool Future = 50004;
+    optional int64 RepeatMax = 50005;
+    optional int64 RepeatMin = 50006;
+}
