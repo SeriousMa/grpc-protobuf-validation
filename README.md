@@ -15,7 +15,7 @@ message HelloRequest {
 }
 ```
 
-# Create grpc server
+# Create grpc channel
 
 ```java
   ManagedChannelBuilder builder = ManagedChannelBuilder.forAddress(url.getHost(), url.getPort()).usePlaintext(true);
