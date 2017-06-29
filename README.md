@@ -1,4 +1,4 @@
-###check example proto
+#check example proto
 
 ```
 import "validation.proto";
@@ -15,7 +15,7 @@ message HelloRequest {
 }
 ```
 
-###Create grpc server before add ValidationInterceptor in your channel
+#Create grpc server before add ValidationInterceptor in your channel
 
 ```java
   ManagedChannelBuilder builder = ManagedChannelBuilder.forAddress(url.getHost(), url.getPort()).usePlaintext(true);
