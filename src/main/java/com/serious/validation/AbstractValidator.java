@@ -1,7 +1,6 @@
 package com.serious.validation;
 
 
-import com.google.protobuf.GeneratedMessageV3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,9 +14,6 @@ public abstract class AbstractValidator implements Validator {
     public void validate(String protoName, String fieldName, Object fieldValue, Object extensionValue)throws IllegalArgumentException {
         String errInfo = String.format("validate error protoName:%s,fieldName:%s,fieldValue:%s,extensionValue:%s,", protoName, fieldName, fieldValue, extensionValue);
         logger.debug("validate protoName:{},fieldName:{},fieldValue:{},extensionValue:{}", protoName, fieldName, fieldValue, extensionValue);
-        if (fieldValue instanceof GeneratedMessageV3) {
-            //TODO
-        }
         doValidate(fieldValue, extensionValue, errInfo);
     }
 

@@ -28,7 +28,7 @@ public class ValidationInterceptor implements ClientInterceptor {
         validatorMap.put(Validation.repeatMin.getDescriptor().getFullName(), new RepeatMinValidator());
         validatorMap.put(Validation.future.getDescriptor().getFullName(), new FutureValidator());
         validatorMap.put(Validation.past.getDescriptor().getFullName(), new PastValidator());
-//        validatorMap.put(Validation.regex.getDescriptor().getFullName(), new RegexValidator());
+        validatorMap.put(Validation.regex.getDescriptor().getFullName(), new RegexValidator());
     }
 
     @Override
@@ -75,9 +75,9 @@ public class ValidationInterceptor implements ClientInterceptor {
         if (!options.getExtension(Validation.repeatMin).equals(Validation.repeatMin.getDefaultValue())) {
             validatorMap.get(Validation.repeatMin.getDescriptor().getFullName()).validate(protoName, fieldName, fieldValue, options.getExtension(Validation.repeatMin));
         }
-//        if (!options.getExtension(Validation.regex).equals(Validation.regex.getDefaultValue())) {
-//            validatorMap.get(Validation.regex.getDescriptor().getFullName()).validate(protoName, fieldName, fieldValue, options.getExtension(Validation.regex));
-//        }
+        if (!options.getExtension(Validation.regex).equals(Validation.regex.getDefaultValue())) {
+            validatorMap.get(Validation.regex.getDescriptor().getFullName()).validate(protoName, fieldName, fieldValue, options.getExtension(Validation.regex));
+        }
     }
 
 
