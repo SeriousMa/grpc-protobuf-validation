@@ -2,6 +2,7 @@ package com.serious.validation.support;
 
 import com.google.common.base.Preconditions;
 import com.serious.validation.AbstractValidator;
+import validation.Validation;
 
 import java.util.regex.Pattern;
 
@@ -9,6 +10,9 @@ import java.util.regex.Pattern;
  * Created by Serious on 2017/6/28.
  */
 public class RegexValidator extends AbstractValidator {
+    public RegexValidator() {
+        validators.put(Validation.regex.getDescriptor(), this);
+    }
 
     @Override
     protected void doValidate(Object fieldValue, Object extensionValue, String errInfo) {
