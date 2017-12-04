@@ -5,7 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by Serious on 2017/6/28.
+ *
+ * @author Serious
+ * @date 2017/6/28
  */
 public abstract class AbstractValidator implements Validator {
     private static final Logger logger = LoggerFactory.getLogger(AbstractValidator.class);

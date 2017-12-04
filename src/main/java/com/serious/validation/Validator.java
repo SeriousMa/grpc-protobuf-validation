@@ -1,7 +1,9 @@
 package com.serious.validation;
 
 /**
- * Created by Serious on 2017/6/28.
+ *
+ * @author Serious
+ * @date 2017/6/28
  */
 public interface Validator {
 
