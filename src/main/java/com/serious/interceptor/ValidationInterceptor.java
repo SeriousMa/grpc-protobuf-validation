@@ -5,8 +5,6 @@ import com.google.protobuf.Descriptors;
 import com.google.protobuf.GeneratedMessageV3;
 import com.serious.validation.ValidatorRegistry;
 import io.grpc.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
@@ -16,9 +14,6 @@ import java.util.Map;
  * @date 2017/6/26
  */
 public class ValidationInterceptor implements ClientInterceptor {
-
-    private static final Logger logger = LoggerFactory.getLogger(ValidationInterceptor.class);
-
     @Override
     public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
         return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
@@ -43,8 +38,6 @@ public class ValidationInterceptor implements ClientInterceptor {
     }
 
     private void doValidate(String protoName, String fieldName, Object fieldValue, DescriptorProtos.FieldOptions options) throws IllegalArgumentException {
-        logger.debug("validate protoName:{},fieldName:{},fieldValue:{}", protoName, fieldName, fieldValue);
-
         for (Map.Entry<Descriptors.FieldDescriptor, Object> entry : options.getAllFields().entrySet()) {
             ValidatorRegistry.getValidator(entry.getKey()).validate(protoName, fieldName, fieldValue, entry.getValue());
         }

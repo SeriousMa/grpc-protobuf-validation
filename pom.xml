@@ -11,7 +11,6 @@
 
     <properties>
         <grpc.version>1.8.0</grpc.version>
-        <slf4j.version>1.7.24</slf4j.version>
         <java-compiler.version>1.7</java-compiler.version>
     </properties>
 
@@ -21,39 +20,7 @@
             <groupId>io.grpc</groupId>
             <artifactId>grpc-all</artifactId>
             <version>${grpc.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>protobuf-lite</artifactId>
-                    <groupId>com.google.protobuf</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
-        <!-- slf4j start -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>log4j-over-slf4j</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jul-to-slf4j</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
-        <!-- slf4j end -->
 
     </dependencies>
     <build>
@@ -61,7 +28,7 @@
             <extension>
                 <groupId>kr.motd.maven</groupId>
                 <artifactId>os-maven-plugin</artifactId>
-                <version>1.4.1.Final</version>
+                <version>1.5.0.Final</version>
             </extension>
         </extensions>
         <plugins>
