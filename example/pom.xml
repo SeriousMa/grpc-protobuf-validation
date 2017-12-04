@@ -11,7 +11,7 @@
 
     <properties>
         <skip_maven_deploy>false</skip_maven_deploy>
-        <grpc.version>1.4.0</grpc.version>
+        <grpc.version>1.8.0</grpc.version>
         <slf4j.version>1.7.24</slf4j.version>
         <logback.version>1.2.1</logback.version>
         <spring.version>4.3.8.RELEASE</spring.version>
@@ -44,7 +44,7 @@
                 <artifactId>protobuf-maven-plugin</artifactId>
                 <version>0.5.0</version>
                 <configuration>
-                    <protocArtifact>com.google.protobuf:protoc:3.2.0:exe:${os.detected.classifier}</protocArtifact>
+                    <protocArtifact>com.google.protobuf:protoc:3.5.0:exe:${os.detected.classifier}</protocArtifact>
                     <pluginId>grpc-java</pluginId>
                     <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
                 </configuration>
