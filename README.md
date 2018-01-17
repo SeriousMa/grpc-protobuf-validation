@@ -14,6 +14,11 @@ message HelloRequest {
     int64 past_timemilles = 7 [(validation.past) = true];
 }
 ```
+# Create grpc server 
+```java
+ Server greetingServer = ServerBuilder.forPort(8080).addService(ServerInterceptors.intercept(new GreetingServiceImpl(), new ValidationInterceptor())).build();
+
+```
 
 # Create grpc channel
 
