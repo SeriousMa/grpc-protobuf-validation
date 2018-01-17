@@ -31,7 +31,8 @@ public class RepeatMaxValidator extends AbstractValidator {
     protected void doValidate(Object fieldValue, Object extensionValue, String errInfo) {
         Collection fieldValueCol = (Collection) fieldValue;
         String err = errInfo + "error with RepeatMax";
-        Preconditions.checkArgument(fieldValueCol.size() < (Integer) extensionValue, err);
+
+        Preconditions.checkArgument(fieldValueCol.size() < (Long) extensionValue, err);
     }
 
     @Override
