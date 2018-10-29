@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <grpc.version>1.15.1</grpc.version>
+        <grpc.version>1.16.1</grpc.version>
         <protobuf.version>3.5.0</protobuf.version>
         <java-compiler.version>1.7</java-compiler.version>
     </properties>
